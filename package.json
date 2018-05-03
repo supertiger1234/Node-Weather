@@ -1,0 +1,22 @@
+{
+  "name": "weather",
+  "version": "0.0.1",
+  "dependencies": {
+    "electron": "^2.0.0"
+  },
+  "description": "Weather app made in nodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supertiger1234/Node-Weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supertiger1234/Node-Weather/issues"
+  },
+  "homepage": "https://github.com/supertiger1234/Node-Weather#readme"
+}
