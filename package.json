@@ -1,13 +1,10 @@
 {
-  "name": "weather",
-  "version": "0.0.1",
-  "dependencies": {
-    "electron": "^2.0.0"
-  },
-  "description": "Weather app made in nodeJS",
-  "main": "app.js",
+  "name": "node-weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -18,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/supertiger1234/Node-Weather/issues"
   },
-  "homepage": "https://github.com/supertiger1234/Node-Weather#readme"
+  "homepage": "https://github.com/supertiger1234/Node-Weather#readme",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  }
 }
