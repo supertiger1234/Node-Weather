@@ -6,19 +6,40 @@ body{
 .windowHeader{
     height: 20px;
     width: 100%;
-    background-color: rgba(195,195,195,0.71)
+    background-color: aqua;
+    display: inline-block;
 }
 .buttons{
     float: right;
+}
+.dragBar{
+    -ms-overflow-style: scrollbar;
+    -webkit-app-region: drag;
+    height: 100%;
+    width: calc(100% - 60px);
+    background-color: aqua;
+    float: left;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(0,0,0,0.44);
 }
 .btn{
     display: inline-block;
     cursor: pointer;
     background-color: rgba(255,255,255,0.51);
     width: 20px;
+    height: 100%;
     text-align: center;
     margin-left: -3.2px;
 }
 .btn:hover{
     background-color: rgba(0,0,0,0.31);
+}
+.weatherChooser{
+    display: none;
+    background-color: rgba(255,255,255,0.44);
+    height: 100px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }

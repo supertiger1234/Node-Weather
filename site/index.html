@@ -1,19 +1,27 @@
 <!
+<!--suppress ALL -->
 <html>
 <head>
+    <script>delete window.module;</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/titleBarControl.js"></script>
 </head>
 <body>
     <div class="windowHeader">
-        <div class="dragbar"></div>
+        <div class="dragBar">&nbsp;Weather <b>BETA</b></div>
         <div class="buttons">
             <span class="minBtn btn" onclick="minWindow()">-</span>
             <span class="maxResBtn btn" onclick="maxWindow()">□</span>
             <span class="closeBtn btn" onclick="closeWindow()">x</span>
-
         </div>
     </div>
+    <div class="weatherChooser">
+        <span>Choose your location</span>
+    </div>
 </body>
+<script src="js/main.js"></script>
 </html>
