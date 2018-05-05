@@ -9,8 +9,11 @@ const {ipcMain} = require('electron');
 
 
 app.on('ready', ()=> {
-    let win = new BrowserWindow({width:800, height:600, frame: false});
-    win.loadURL(`file://${__dirname}/site/index.html`)
+    let win = new BrowserWindow({width:800, height:600, frame: false, show: false});
+    win.loadURL(`file://${__dirname}/site/index.html`);
+    win.once('ready-to-show', () => {
+        win.show()
+    })
 });
 
 ipcMain.on('getSuggestions', (event, cityPartial) => {

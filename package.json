@@ -17,11 +17,14 @@
   },
   "homepage": "https://github.com/supertiger1234/Node-Weather#readme",
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron": "^2.0.0",
+    "electron-compilers": "^5.9.0",
+    "electron-packager": "^12.0.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "cities-list": "^1.0.3",
+    "electron-compile": "^6.4.2",
     "openweather-apis": "^3.3.5",
     "smart-city-finder": "^1.1.3"
   }

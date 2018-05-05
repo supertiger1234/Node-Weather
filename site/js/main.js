@@ -3,7 +3,7 @@ $(function() {
         $("html body").animate({
             backgroundColor: "#70d1ff"
         }, 500, function () {
-            var filterVal = 'blur(' + 100 + 'px)';
+            var filterVal = 'blur(' + 50 + 'px)';
             $(".pgBg").css({
                 'filter':filterVal,
                 'webkitFilter':filterVal,
@@ -30,13 +30,23 @@ $(function() {
 
 });
 ipcRenderer.on('sendSuggestions', (event, suggestions) => {
-    console.log(suggestions)
+    console.log(suggestions);
     var elementAppend = '';
 
     suggestions.forEach(function(item){
         console.log('ID: ' + item.id);
         elementAppend += '<span class="eachCity">' + item.name + '<br><b>' + item.country + '</b></span>';
     });
+
+    $('.suggestionsList').fadeIn('fast')
+        .css("display", "absolute")
+        .hide()
+        .fadeIn()
+        .animate({
+            'height': '200px'
+        }, {duration: 'slow', queue: false}, function() {
+        });
+
     $('.suggestionsList').html(elementAppend)
 
 
