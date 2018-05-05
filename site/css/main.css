@@ -81,10 +81,11 @@ body {
     text-align: left;
     width: 230px;
     height: 0;
+    max-height: 200px;
     background-color: rgba(0,0,0,0.2);
     margin: 5px auto auto;
     border-radius: 3px;
-    overflow: auto;
+    overflow:auto !important;
     display: none;
 }
 .eachCity{

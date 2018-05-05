@@ -1,3 +1,4 @@
+let suggestionsShown = false;
 $(function() {
     setTimeout(function(){
         $("html body").animate({
@@ -37,22 +38,39 @@ ipcRenderer.on('sendSuggestions', (event, suggestions) => {
         console.log('ID: ' + item.id);
         elementAppend += '<span class="eachCity">' + item.name + '<br><b>' + item.country + '</b></span>';
     });
+    $('.suggestionsList').html(elementAppend);
 
-    $('.suggestionsList').fadeIn('fast')
-        .css("display", "absolute")
-        .hide()
-        .fadeIn()
-        .animate({
-            'height': '200px'
-        }, {duration: 'slow', queue: false}, function() {
-        });
+    if (suggestions.length === 0 && suggestionsShown){
+        $('.suggestionsList').fadeOut('fast')
+            .animate({
+                'height': '0'
+            }, {duration: 'slow', queue: false}, function () {
+            });
 
-    $('.suggestionsList').html(elementAppend)
+        return;
+    }
 
+        if (suggestionsShown === false) {
+            $('.suggestionsList').fadeIn('fast')
+                .animate({
+                    'height': '200px',
+                }, {duration: 'slow', queue: false}, function () {
+                });
+
+            suggestionsShown = true
+        }
 
 });
 window.onkeydown=function(event){
     if ($('#location').val().trim().length >=3){
         ipcRenderer.send('getSuggestions', $('#location').val().trim())
+    }else if (suggestionsShown){
+        $('.suggestionsList').fadeOut('fast')
+            .animate({
+                'height': '0'
+            }, {duration: 'slow', queue: false}, function () {
+            });
+
+        suggestionsShown = false
     }
 };
