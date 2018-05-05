@@ -20,5 +20,9 @@
     "electron": "^2.0.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cities-list": "^1.0.3",
+    "openweather-apis": "^3.3.5",
+    "smart-city-finder": "^1.1.3"
   }
 }

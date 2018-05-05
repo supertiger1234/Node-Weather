@@ -2,7 +2,7 @@
 <!--suppress ALL -->
 <html>
 <head>
-    <script>delete window.module;</script>
+    <script>delete window.module;const {ipcRenderer} = require('electron');</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -11,6 +11,8 @@
     <script src="js/titleBarControl.js"></script>
 </head>
 <body>
+    <div class="pgBg">
+    </div>
     <div class="windowHeader">
         <div class="dragBar">&nbsp;Weather <b>BETA</b></div>
         <div class="buttons">
@@ -20,8 +22,19 @@
         </div>
     </div>
     <div class="weatherChooser">
-        <span>Choose your location</span>
+        <span class="title">Welcome!</span>
+        <br>
+        <br>
+        <form>
+            <label for="location">Where do you live?</label>
+            <br>
+            <input type="text" class="textInput" id="location" placeholder="Location"><br>
+            <div class="suggestionsList">
+
+            </div>
+        </form>
     </div>
+
 </body>
 <script src="js/main.js"></script>
 </html>
