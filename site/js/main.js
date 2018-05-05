@@ -61,8 +61,9 @@ ipcRenderer.on('sendSuggestions', (event, suggestions) => {
         }
 
 });
-window.onkeydown=function(event){
-    if ($('#location').val().trim().length >=3){
+
+$('#location').bind('input propertychange', function() {
+    if(this.value.trim().length >=3){
         ipcRenderer.send('getSuggestions', $('#location').val().trim())
     }else if (suggestionsShown){
         $('.suggestionsList').fadeOut('fast')
@@ -73,4 +74,4 @@ window.onkeydown=function(event){
 
         suggestionsShown = false
     }
-};
+});
