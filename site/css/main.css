@@ -99,6 +99,30 @@ body {
     background: rgba(0,0,0,0.3);
 }
 
+
+.box{
+    position: absolute;
+    padding-right: 10px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.43);
+    font-size: 25px;
+    bottom: -30px;
+    padding-left: 10px;
+}
+.temp{
+    left: 20px;
+    float: left;
+}
+.sentence{
+    float: right;
+    right: 20px;
+}
+.details{
+    display: none;
+}
+
+
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

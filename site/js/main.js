@@ -56,16 +56,25 @@ ipcRenderer.on('sendSuggestions', (event, suggestions) => {
 });
 
 ipcRenderer.on('sendWeatherInfo', (event, weatherJSON) => {
+    const temperature = weatherJSON.main.temp;
+    const detail = weatherJSON.weather[0].description;
+    $('#temp').text(temperature + "°");
+    $('#detail').text(detail);
     setTimeout(function(){
         $("html body").animate({
             backgroundColor: "#70d1ff"
         }, 500, function () {
             $(".pgBg").css({
                 'filter':'none',
-                'transition':'all 0.5s ease-out'
+                'transition':'all 0.5s ease-out',
             });
+            $('.weatherChooser').fadeOut('fast');
 
-            $('.weatherChooser').fadeOut('fast')
+             $('.box').animate({'bottom': '20px'});
+                $('.details').fadeIn('fast')
+                    .css("display", "absolute")
+                    .hide()
+                    .fadeIn();
         });
     }, 500);
 });
